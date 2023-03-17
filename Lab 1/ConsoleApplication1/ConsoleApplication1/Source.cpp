@@ -10,7 +10,6 @@ int main()
 	char prog[15];
 	double cgpa;
 	char phNo[15];
-	char bug[5];
 	ofstream fout;
 	fout.open("StudentInfo.csv");
 	fout << "Registration Number" << "," << "First Name" << "," << "Last Name" << "," << "Program" << "," << "CGPA" << "," << "Contact Number" << endl;
@@ -43,6 +42,59 @@ int main()
 		cout <<endl;
 		fout << regNo << "," << firstName << "," << lastName << "," << prog << "," << cgpa << "," << phNo << endl;
 	}
+	fout.close();
+	ifstream fin;
+	char headingArr[150];
+	char studentArr1[150];
+	char reg1[150];
+	char firstName1[150];
+	if (!fin)
+	{
+		cout << "File Not Found" << endl;
+	}
+	else
+	{
+		fin.open("StudentInfo.csv");
+		int bug = 0;
+		int bug1 = 0;
+		while (!fin.eof())
+		{
+			fin.getline(headingArr,150);
+			fin.getline(studentArr1, 100);
+			for (int i = 0; studentArr1[i]!='\0'; i++)
+			{
+				if (studentArr1[i] != ',')
+				{
+					reg1[i] = studentArr1[i];
+					bug++;
+				}
+				else
+				{
+					break;
+				}
+			}
 
+			bug1 = bug + 1;
+			for (int i = bug1; studentArr1[i] != '\0'; i++)
+			{
+				if (studentArr1[i] != ',')
+				{
+					firstName1[i] = studentArr1[i];
+					bug1++;
+				}
+				else
+				{
+					break;
+				}
+			}
+			/*cout << bug;
+			cout << bug1;*/
+			cout << studentArr1 << endl;
+			reg1[bug] = '\0';
+			firstName1[bug1] = '\0';
+		}
+		cout << reg1 << endl;
+		cout << firstName1 << endl;
+	}
 	return 0;
 }
