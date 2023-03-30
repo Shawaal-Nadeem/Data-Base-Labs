@@ -34,7 +34,7 @@ int main()
 {
 	ofstream fout;
 	fout.open("data.csv");
-	fout << "Registration Number , Name , Program , CGPA" << endl;
+	fout << "Registration Number , Name , Program , CGPA, Contact Number" << endl;
 	fout << "L1F17BSCS0324,Amna Zafar,BBA,2.3,0231891234 " << endl;
 	fout << "L1F20BBA0244,Ali Aijaz,SE,3.0,0543891234" << endl;
 	fout << "L1F10SE6424,Alex Newton,BSCS,2.7,02318914524" << endl;
