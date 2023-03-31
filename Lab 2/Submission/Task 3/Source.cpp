@@ -109,7 +109,7 @@ int main()
 	char choice;
 	if (length == temp1)
 	{
-		cout << "Current Data " << endl;
+		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student1);
 		cout << "Do you want to Update CGPA (Y/N y/n) : ";
@@ -125,7 +125,7 @@ int main()
 	}
 	else if (length == temp2)
 	{
-		cout << "Current Data " << endl;
+		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student2);
 		cout << "Do you want to Update CGPA (Y/N y/n) : ";
@@ -141,7 +141,7 @@ int main()
 	}
 	else if (length == temp3)
 	{
-		cout << "Current Data " << endl;
+		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student3);
 		cout << "Do you want to Update CGPA (Y/N y/n) : ";
@@ -157,7 +157,7 @@ int main()
 	}
 	else if (length == temp4)
 	{
-		cout << "Current Data " << endl;
+		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student4);
 		cout << "Do you want to Update CGPA (Y/N y/n) : ";
@@ -173,7 +173,7 @@ int main()
 	}
 	else if (length == temp5)
 	{
-		cout << "Current Data " << endl;
+		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student5);
 		cout << "Do you want to Update CGPA (Y/N y/n) : ";
