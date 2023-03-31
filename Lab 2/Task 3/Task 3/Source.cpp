@@ -28,6 +28,7 @@ void display(char stud[100])
 		}
 	}
 	cout << endl;
+	cout << endl;
 }
 
 void update_display(char stud[100])
@@ -41,7 +42,6 @@ void update_display(char stud[100])
 		regLen++;
 	}
 	int nameLen = regLen+1;
-	cout << "temp" << endl;
 	for (int i = nameLen; stud[i] != ','; i++)
 	{
 		nameLen++;
@@ -58,11 +58,10 @@ void update_display(char stud[100])
 		stud[i] = cgpa[start];
 		start++;
 	}
+	
+	cout << endl;
+	cout << "Your CGPA has been Updated." << endl;
 
-	for (int i = 0; stud[i] != '\0'; i++)
-	{
-		cout << stud[i];
-	}
 }
 
 int main()
@@ -113,11 +112,15 @@ int main()
 		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student1);
-		cout << "Do you want to Update CGPA : ";
+		cout << "Do you want to Update CGPA (Y/N y/n) : ";
 		cin >> choice;
 		if (choice == 'Y' || choice == 'y')
 		{
 			update_display(student1);
+		}
+		else
+		{
+			cout << "Your CGPA is not Update." << endl;
 		}
 	}
 	else if (length == temp2)
@@ -125,32 +128,82 @@ int main()
 		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student2);
+		cout << "Do you want to Update CGPA (Y/N y/n) : ";
+		cin >> choice;
+		if (choice == 'Y' || choice == 'y')
+		{
+			update_display(student2);
+		}
+		else
+		{
+			cout << "Your CGPA is not Update." << endl;
+		}
 	}
 	else if (length == temp3)
 	{
 		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student3);
+		cout << "Do you want to Update CGPA (Y/N y/n) : ";
+		cin >> choice;
+		if (choice == 'Y' || choice == 'y')
+		{
+			update_display(student3);
+		}
+		else
+		{
+			cout << "Your CGPA is not Update." << endl;
+		}
 	}
 	else if (length == temp4)
 	{
 		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student4);
+		cout << "Do you want to Update CGPA (Y/N y/n) : ";
+		cin >> choice;
+		if (choice == 'Y' || choice == 'y')
+		{
+			update_display(student4);
+		}
+		else
+		{
+			cout << "Your CGPA is not Update." << endl;
+		}
 	}
 	else if (length == temp5)
 	{
 		cout << "Previous Data " << endl;
 		cout << endl;
 		display(student5);
+		cout << "Do you want to Update CGPA (Y/N y/n) : ";
+		cin >> choice;
+		if (choice == 'Y' || choice == 'y')
+		{
+			update_display(student5);
+		}
+		else
+		{
+			cout << "Your CGPA is not Update." << endl;
+		}
+
 	}
+
 	else
 	{
 		cout << "Not Exist" << endl;
 		cout << endl;
 	}
 
-
+	ofstream fout;
+	fout.open("data.csv");
+	fout << headArr << endl;
+	fout << student1 << endl;
+	fout << student2 << endl;
+	fout << student3 << endl;
+	fout << student4 << endl;
+	fout << student5 << endl;
+	fout.close();
 
 	return 0;
 }
