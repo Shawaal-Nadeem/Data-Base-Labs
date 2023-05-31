@@ -27,3 +27,4 @@ select customerName from customers where customerNumber IN(select customerNumber
 select orderNumber from orderdetails where (quantityOrdered*priceEach)>6000;
 
 -- Task 8
+select customerName from customers where Exists(SELECT customerNumber FROM orders WHERE EXISTS (SELECT * FROM payments WHERE payments.customerNumber = orders.customerNumber AND amount > 60000) GROUP BY customerNumber HAVING COUNT(customerNumber) >= 2);
