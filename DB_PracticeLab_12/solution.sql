@@ -44,7 +44,10 @@ select count(*)from employees where officeCode=oc;
 call AllEmployeeRecords(6);
 
 -- Task 8
-
+create procedure totalEmployeeRecords (IN oc int,out counting int)
+select count(*) into counting from employees where employees.officeCode=oc;
+call totalEmployeeRecords(6,@recordCount);
+select @recordCount;
 
 -- Task 9
 drop view if exists completeregistrationnumber;
